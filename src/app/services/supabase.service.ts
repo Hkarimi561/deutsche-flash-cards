@@ -17,7 +17,7 @@ export class SupabaseService {
   signInWithOAuth(provider: 'google' | 'github') {
     return this.supabase.auth.signInWithOAuth({
       provider,
-      options: { redirectTo: `${window.location.origin}/dashboard` }, // Redirect user after login
+      options: { redirectTo: `https://deutsche-flash-cards.vercel.app/dashboard` }, // Redirect user after login
     });
   }
 
