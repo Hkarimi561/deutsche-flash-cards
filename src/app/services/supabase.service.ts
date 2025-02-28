@@ -14,10 +14,10 @@ export class SupabaseService {
   }
 
   // Sign in using OAuth (e.g., Google, GitHub)
-  signInWithOAuth(provider: 'google' | 'github') {
+  signInWithOAuth(provider: 'google') {
     return this.supabase.auth.signInWithOAuth({
       provider,
-      options: { redirectTo: `https://deutsche-flash-cards.vercel.app/dashboard` }, // Redirect user after login
+      options: { redirectTo: `${window.location.origin}/auth/callback` }, // Redirect user after login
     });
   }
 

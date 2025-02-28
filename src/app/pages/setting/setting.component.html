@@ -3,7 +3,7 @@
     <div>
       <div class="avatar">
         <div class="mask mask-squircle w-24">
-          <img [ngSrc]="user.user_metadata.avatar_url" fill priority/>
+          <img [src]="imageUrl"  (error)="setDefaultImage()" alt="Profile Image"/>
         </div>
       </div>
     </div>

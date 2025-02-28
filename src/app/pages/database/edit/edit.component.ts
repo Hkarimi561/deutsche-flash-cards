@@ -38,6 +38,7 @@ export class EditComponent implements OnInit {
     this.phraseForm = this.fb.group({
       title: [this.phrase?.title, [Validators.required, Validators.minLength(2)]],
       description: [this.phrase?.description, [Validators.required, Validators.minLength(10)]],
+      example: [this.phrase?.example],
       seen: [this.phrase?.seen],
       needToReview: [this.phrase?.needToReview],
       hide: [this.phrase?.hide],

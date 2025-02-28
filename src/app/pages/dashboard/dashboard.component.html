@@ -11,6 +11,9 @@
             <div class="swap-on w-screen h-[calc(100vh-64px)]">
               <div class="card h-full w-full flex flex-col  justify-between bg-base-300 justify-center text-center">
                 <h1 class="justify-items-center">{{phrase.description}}</h1>
+                @if (phrase.example) {
+                  <kbd class="m-4 kbd kbd-md">{{phrase.example}}</kbd>
+                }
                 <div class="grid grid-cols-4 gap-4 mt-10">
                   <div></div>
                   <div>
