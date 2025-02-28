@@ -1,13 +1,18 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Phrase} from '../interfaces/phrase';
 import {v4 as uuidv4} from 'uuid';
-const PHRASE_DB="phrases_db"
+
+const PHRASE_DB = "phrases_db"
+const PHRASE_STYLE = "show_phrase_first"
+
 @Injectable({
   providedIn: 'root'
 })
 export class PhraseService {
 
-  constructor() {}
+  constructor() {
+  }
+
 // Save the array of phrases to localStorage
   savePhrases(phrases: Phrase[]): void {
     localStorage.setItem(PHRASE_DB, JSON.stringify(phrases));
@@ -58,5 +63,16 @@ export class PhraseService {
     }
 
     this.savePhrases(phrases); // Save the updated list to localStorage
+  }
+
+
+  getPhraseStyle() {
+    const style = localStorage.getItem(PHRASE_STYLE)
+
+    return style ? JSON.parse(style) : true;
+  }
+
+  setPhraseStyle(style: boolean) {
+    return localStorage.setItem(PHRASE_STYLE, JSON.stringify(style));
   }
 }

@@ -13,6 +13,7 @@ import {NgClass} from '@angular/common';
 })
 export class DashboardComponent implements OnInit{
   phrases:Phrase[]|undefined;
+  phraseStyle:boolean=true;
   constructor(private phraseService:PhraseService) {
   }
   ngOnInit() {
@@ -32,6 +33,8 @@ export class DashboardComponent implements OnInit{
     let mergedArray = [...selectedNeedToReview, ...selectedReviewed];
     // Shuffle the final array to randomize order
     this.phrases = this.shuffleArray(mergedArray);
+
+    this.phraseStyle = this.phraseService.getPhraseStyle()
 
   }
 
